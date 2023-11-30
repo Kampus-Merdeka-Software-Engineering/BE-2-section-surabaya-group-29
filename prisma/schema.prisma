@@ -1,0 +1,17 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model News {
+    id Int @id @default(autoincrement())
+    judul String @db.VarChar(100)
+    deskripsi String @db.VarChar(100)
+    isiBerita String @db.VarChar(100)
+    penulis String @db.VarChar(100)
+    foto String @db.VarChar(100)
+}
