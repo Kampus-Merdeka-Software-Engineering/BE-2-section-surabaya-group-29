@@ -9,9 +9,10 @@ generator client {
 
 model News {
     id Int @id @default(autoincrement())
-    judul String @db.VarChar(100)
-    deskripsi String @db.VarChar(100)
-    isiBerita String @db.VarChar(100)
-    penulis String @db.VarChar(100)
-    foto String @db.VarChar(100)
+    createdAt DateTime @default(now())
+    judul String 
+    deskripsi String 
+    isiBerita String
+    penulis String 
+    foto String 
 }
