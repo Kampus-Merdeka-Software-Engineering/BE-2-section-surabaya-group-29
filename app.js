@@ -21,8 +21,10 @@ app.use(express.urlencoded({extended: true}));
 // app.use(LoggerMiddleware);
 
 const newsRoutes = require('./routes/newsRoutes.js');
+const categoryRoutes = require('./routes/categoryRoutes.js');
 
 app.use(newsRoutes);
+app.use(categoryRoutes);
 
 const PORT =process.env.PORT || 3000;
 

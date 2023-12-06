@@ -7,12 +7,21 @@ generator client {
   provider = "prisma-client-js"
 }
 
+model Category {
+    id Int @id @default(autoincrement())
+    cat_name String 
+    news News[]
+}
+
 model News {
     id Int @id @default(autoincrement())
     createdAt DateTime @default(now())
-    judul String 
-    deskripsi String 
-    isiBerita String
+    judul String @db.Text
+    deskripsi String @db.Text
+    isiBerita String @db.Text
     penulis String 
-    foto String 
+    foto String @db.Text
+
+    cat_id Int @unique
+    category Category @relation(fields: [cat_id], references: [id])
 }
