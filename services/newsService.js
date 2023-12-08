@@ -1,5 +1,7 @@
 const prisma = require('../config/prisma.js')
 
+
+
 async function getAllNews() {
     try{
         const news = await prisma.news.findMany();

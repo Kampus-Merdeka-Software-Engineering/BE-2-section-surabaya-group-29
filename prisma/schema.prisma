@@ -21,6 +21,7 @@ model News {
     isiBerita String @db.Text
     penulis String 
     foto String @db.Text
+    waktu_baca String
 
     cat_id Int @unique
     category Category @relation(fields: [cat_id], references: [id])
