@@ -22,8 +22,8 @@ model News {
     penulis String 
     foto String @db.Text
     waktu_baca String
-
-    cat_id Int 
     category Category @relation(fields: [cat_id], references: [id])
-    @@index([cat_id], name: "cat_id")
+    cat_id Int 
+    
+
 }
