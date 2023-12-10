@@ -14,6 +14,28 @@ async function getAllNews(req, res) {
     // });
 };
 
+const getNewsById = async (req, res) => {
+    try {
+        const result = await newsService.getNewsById(req.params.id);
+        if (!result) {
+            res.status(404);
+            res.json({
+                message: 'News not found',
+            });
+            return;
+        }
+
+        res.json({
+            data: result,
+            message: "News successfully retrieved",
+        });
+    } catch (e) {
+        res.json({
+            error:e,
+        });
+    }
+};
 module.exports = {
-    getAllNews
+    getAllNews,
+    getNewsById
 };
