@@ -35,7 +35,31 @@ const getNewsById = async (req, res) => {
         });
     }
 };
+
+const searchNews = async (req, res) => {
+    try {
+      const result = await newsService.searchNews(req.params.title);
+      if (!result) {
+        res.status(404);
+        res.json({
+          message: "Data not found",
+        });
+        return;
+      }
+  
+      res.json({
+        data: result,
+        message: "Data successfully retrieved",
+      });
+    } catch (e) {
+      res.json({
+        error: e,
+      });
+    }
+  };
+
 module.exports = {
     getAllNews,
-    getNewsById
+    getNewsById,
+    searchNews,
 };

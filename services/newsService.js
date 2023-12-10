@@ -25,7 +25,24 @@ async function getNewsById(id) {
     }
 }
 
+async function searchNews(title) {
+    try {
+      const news = await prisma.news.findMany({
+        where: {
+          judul: {
+            contains: title,
+          },
+        },
+      });
+  
+      return news;
+    } catch (err) {
+      throw err;
+    }
+  }
+
 module.exports = {
     getAllNews,
     getNewsById,
+    searchNews,
 };

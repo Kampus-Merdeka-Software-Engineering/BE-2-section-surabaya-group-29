@@ -35,40 +35,6 @@ app.get('/', (req, res) => {
 })
 
 
-// app.get('/berita/:id', (req, res) => {
-//     const beritaId = req.params.id;
-//     res.json({
-//         message: `Get detail data news by id ${beritaId} is successfully`,
-//         data: 
-//             {
-//                 id: beritaId,
-//                 judul: 'Umi Ayu Meluncurkan Produk Baru Buatan Orang Indonesia',
-//                 deskripsi: 'Ini adalah Deskripsi',
-//                 isiBerita: 'Ini adalah Berita',
-//                 penulis: 'Ammar',
-//                 foto: 'Ini adalah link foto'
-//             }
-//     })
-// })
-
-// app.post('/berita', async (req, res) => {
-//     const { judul, deskripsi, isiBerita, penulis, foto } = req.body
-    
-//     const result = await prisma.news.create({
-//         data: {
-//             judul,
-//             deskripsi,
-//             isiBerita,
-//             penulis,
-//             foto
-//         }
-//     })
-
-//     res.json({
-//         message: 'Create data news is successfully',
-//         data: result
-//     })
-// })
 
 app.listen(PORT, () => {
     console.log(`example app listing on port http://localhost:${PORT}`);
