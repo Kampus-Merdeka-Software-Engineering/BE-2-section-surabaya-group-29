@@ -10,6 +10,20 @@ async function getAllCategory() {
     }
 };
 
+async function getCatById(cat_id) {
+    try{
+        const result = await prisma.category.findMany({
+            where: {
+                id: cat_id,
+            },
+        });
+        return result;
+    } catch(err) {
+        throw err;
+    }
+}
+
 module.exports = {
-    getAllCategory
+    getAllCategory,
+    getCatById
 }

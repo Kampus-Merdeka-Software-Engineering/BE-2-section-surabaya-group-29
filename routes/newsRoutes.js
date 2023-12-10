@@ -4,4 +4,4 @@ const newsController = require('../controllers/newsController.js');
 
 router.get('/berita', newsController.getAllNews);
 
-module.exports = router;
+module.exports = {router};
